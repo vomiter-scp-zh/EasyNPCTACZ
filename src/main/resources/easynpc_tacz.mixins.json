@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.vomiter.easynpc_tacz.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "easynpc_tacz.refmap.json",
+  "mixins": [
+    "EasyNPCGunAttackGoalMixin",
+    "EasyNPCAttackHandlerMixin",
+    "MobsTaczCombatGoalMixin",
+    "MobGunUtilsMixin",
+    "EasyNPCMeleeAttackGoalMixin",
+    "ShooterMeleeGoalMixin",
+    "TaczAmmoAvailabilityMixin",
+    "TaczAmmoConsumptionMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}
