@@ -128,9 +128,10 @@ dependencies {
 
     implementation fg.deobf("curse.maven:easy-npc-core-1308987:${easy_npc_file_id}")
     implementation fg.deobf("curse.maven:mobs-tacz-1488205:${mobstacz_file_id}")
+
     implementation fg.deobf("curse.maven:timeless-and-classics-zero-1028108:${tacz_file_id}")
     implementation fg.deobf("curse.maven:neurolib-1484243:${neurolib_file_id}")
-    runtimeOnly fg.deobf("curse.maven:easy-npc-config-ui-1214728:9411429")
+    implementation fg.deobf("curse.maven:easy-npc-config-ui-1214728:9411429")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings

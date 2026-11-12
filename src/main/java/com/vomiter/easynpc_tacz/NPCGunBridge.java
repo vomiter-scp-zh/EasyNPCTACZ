@@ -8,6 +8,7 @@ import com.tacz.guns.api.item.builder.AmmoItemBuilder;
 import com.tacz.guns.resource.index.CommonGunIndex;
 import com.tacz.guns.util.AttachmentDataUtils;
 import com.vomiter.mobstacz.common.entity.ai.CrazyShooterShootingGoal;
+import com.vomiter.mobstacz.common.entity.MobGunUtils;
 import com.vomiter.mobstacz.common.entity.ai.GunMode;
 import com.vomiter.mobstacz.common.entity.ai.IMobGunState;
 import com.vomiter.mobstacz.common.entity.ammo.ModCapabilities;
@@ -94,6 +95,10 @@ public final class NPCGunBridge {
         watch.gunEnabled = enabled;
     }
 
+    public static void onAmmoSettingsChanged(Mob mob) {
+        if (!MobGunUtils.shouldConsumeAmmo(mob)) retryGunAfterChange(mob);
+    }
+
     /** A resupply/enable edge permits one native attempt, not another ammo state machine. */
     private static void retryGunAfterChange(Mob mob) {
         if (!mob.level().isClientSide && isManaged(mob) && isGunAttackEnabled(mob)
@@ -159,7 +164,8 @@ public final class NPCGunBridge {
 
     /** Called only when TACZ's reload script actually requests rounds. */
     public static void stockAmmoForReload(Mob mob, ItemStack gun, int requested) {
-        if (requested <= 0 || mob.level().isClientSide || !isManaged(mob) || !isGunAttackEnabled(mob)) {
+        if (requested <= 0 || mob.level().isClientSide || !isManaged(mob) || !isGunAttackEnabled(mob)
+                || !MobGunUtils.shouldConsumeAmmo(mob)) {
             return;
         }
         mob.getCapability(ModCapabilities.MOB_AMMO).ifPresent(reserve -> {
@@ -176,7 +182,8 @@ public final class NPCGunBridge {
 
     /** Inventory-fed guns consume directly; they never need an artificial reload or cap staging. */
     public static int consumeInventoryAmmo(Mob mob, ItemStack gun, int requested) {
-        if (mob.level().isClientSide || !isManaged(mob) || !isGunAttackEnabled(mob)) {
+        if (mob.level().isClientSide || !isManaged(mob) || !isGunAttackEnabled(mob)
+                || !MobGunUtils.shouldConsumeAmmo(mob)) {
             return 0;
         }
         return supplyFromInventory(mob, gun, requested, ItemStack::getCount);

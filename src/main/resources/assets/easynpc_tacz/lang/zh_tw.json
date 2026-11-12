@@ -1,0 +1,11 @@
+{
+  "item.easynpc_tacz.tacz_config_stick": "Easy NPC TACZ 設定棒",
+  "item.easynpc_tacz.tacz_config_stick.tooltip": "對 NPC 按右鍵，設定彈藥消耗與射擊冷卻。",
+  "menu.easynpc_tacz.gun_config": "NPC TACZ 設定",
+  "menu.easynpc_tacz.consume_ammo": "消耗子彈",
+  "menu.easynpc_tacz.additional_cooldown": "啟用額外射擊冷卻",
+  "menu.easynpc_tacz.cooldown_hint": "控制 Mobs TACZ 額外延遲；槍枝本身的射速限制仍有效。",
+  "menu.easynpc_tacz.reset": "還原 Mobs TACZ 預設值",
+  "menu.easynpc_tacz.saved_immediately": "變更會立即儲存。",
+  "message.easynpc_tacz.cannot_edit": "你無法設定此 NPC。"
+}

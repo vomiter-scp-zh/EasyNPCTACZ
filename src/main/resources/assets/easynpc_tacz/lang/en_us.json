@@ -1,0 +1,11 @@
+{
+  "item.easynpc_tacz.tacz_config_stick": "Easy NPC TACZ Config Stick",
+  "item.easynpc_tacz.tacz_config_stick.tooltip": "Right-click an NPC to configure ammunition and firing cooldown.",
+  "menu.easynpc_tacz.gun_config": "NPC TACZ Settings",
+  "menu.easynpc_tacz.consume_ammo": "Consume ammunition",
+  "menu.easynpc_tacz.additional_cooldown": "Enable additional shooting cooldown",
+  "menu.easynpc_tacz.cooldown_hint": "Keeps the firearm’s normal fire rate; controls only Mobs TACZ’s extra delay.",
+  "menu.easynpc_tacz.reset": "Restore Mobs TACZ defaults",
+  "menu.easynpc_tacz.saved_immediately": "Changes are saved immediately.",
+  "message.easynpc_tacz.cannot_edit": "You cannot configure this NPC."
+}

@@ -12,7 +12,10 @@
     "EasyNPCMeleeAttackGoalMixin",
     "ShooterMeleeGoalMixin",
     "TaczAmmoAvailabilityMixin",
-    "TaczAmmoConsumptionMixin"
+    "TaczAmmoConsumptionMixin",
+    "NPCGunSettingsMixin"
   ],
-  "injectors": { "defaultRequire": 1 }
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

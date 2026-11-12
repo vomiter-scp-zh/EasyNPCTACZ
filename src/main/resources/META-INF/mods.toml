@@ -100,3 +100,11 @@ description='''${mod_description}'''
     versionRange="${neurolib_version_range}"
     ordering="AFTER"
     side="BOTH"
+
+
+[[dependencies.${mod_id}]]
+    modId="easy_npc_config_ui"
+    mandatory=false
+    versionRange="[7.18.0,7.19.0)"
+    ordering="AFTER"
+    side="BOTH"
