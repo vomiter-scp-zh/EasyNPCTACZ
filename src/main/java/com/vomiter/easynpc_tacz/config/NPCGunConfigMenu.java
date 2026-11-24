@@ -59,7 +59,6 @@ public final class NPCGunConfigMenu extends AbstractContainerMenu {
     public boolean clickMenuButton(Player player, int button) {
         if (!(player instanceof ServerPlayer) || !stillValid(player)) return false;
         NPCGunSettings settings = (NPCGunSettings) npc;
-        // Explicit values rather than toggles keep concurrent editors deterministic.
         switch (button) {
             case 0, 1 -> settings.enpcTacz$setAmmoSetting((byte) button);
             case 2, 3 -> settings.enpcTacz$setCooldownSetting((byte) (button - 2));

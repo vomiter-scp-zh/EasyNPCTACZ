@@ -169,7 +169,6 @@ public final class NPCGunConfigScreen
                 boolean checked,
                 int buttonBase
         ) {
-            // 標籤改由 renderLabels() 以深色繪製。
             super(x, y, 252, 20, label, checked, false);
             this.buttonBase = buttonBase;
         }
@@ -182,7 +181,6 @@ public final class NPCGunConfigScreen
 
         private void sync(boolean checked) {
             if (selected() != checked) {
-                // 同步伺服器狀態，不再次送出修改。
                 super.onPress();
             }
         }

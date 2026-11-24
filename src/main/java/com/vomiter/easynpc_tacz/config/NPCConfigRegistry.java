@@ -32,7 +32,6 @@ public final class NPCConfigRegistry {
     private NPCConfigRegistry() {}
 
     public static void register(IEventBus bus) {
-        // No reference to Config UI classes: this remains safe when the optional mod is absent.
         if (ModList.get().isLoaded(CONFIG_MOD)) {
             ITEMS.register(bus);
             MENUS.register(bus);
